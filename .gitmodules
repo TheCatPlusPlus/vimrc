@@ -114,10 +114,6 @@
 	path = bundles/vim-addon-errorformats
 	url = https://github.com/MarcWeber/vim-addon-errorformats
 	ignore = dirty
-[submodule "bundles/vimerl"]
-	path = bundles/vimerl
-	url = https://github.com/jimenezrick/vimerl
-	ignore = dirty
 [submodule "bundles/vim-racer"]
 	path = bundles/vim-racer
 	url = https://github.com/racer-rust/vim-racer
