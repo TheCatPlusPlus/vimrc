@@ -134,3 +134,7 @@
 	path = bundles/vim-go
 	url = https://github.com/fatih/vim-go.git
 	ignore = dirty
+[submodule "bundles/vim-jinja"]
+	path = bundles/vim-jinja
+	url = https://github.com/lepture/vim-jinja.git
+	ignore = dirty
