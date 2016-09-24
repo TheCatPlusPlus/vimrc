@@ -1,1 +1,0 @@
-vim-niji-1.0.3.vmb: call delete('D:\home\.vim/vimfiles/autoload/niji.vim')|call delete('D:\home\.vim/vimfiles/doc/niji.txt')|call delete('D:\home\.vim/vimfiles/plugin/niji.vim')
