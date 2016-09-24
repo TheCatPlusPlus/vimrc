@@ -1,5 +1,5 @@
 "=============================================================================
-" FILE: parser.vim
+" FILE: cmd.vim
 " AUTHOR:  Shougo Matsushita <Shougo.Matsu@gmail.com>
 " License: MIT license  {{{
 "     Permission is hereby granted, free of charge, to any person obtaining
@@ -28,101 +28,74 @@ let s:save_cpo = &cpo
 set cpo&vim
 " }}}
 
-" Constants. {{{
-let g:vimproc#lexer#token_type = {
-      \ 'int' : 257,
-      \ 'string' : 258,
-      \ }
-" }}}
+if !vimproc#util#is_windows()
+  function! vimproc#cmd#system(expr) abort
+    return vimproc#system(a:expr)
+  endfunction
+  let &cpo = s:save_cpo
+  finish
+endif
 
-function! vimproc#lexer#init_lexer(text) abort
-  let lexer = deepcopy(s:lexer)
-  let lexer.reader = vimproc#lexer#init_reader(a:text)
+" Based from : http://d.hatena.ne.jp/osyo-manga/20130611/1370950114
 
-  return lexer
-endfunction
+let s:cmd = {}
 
-let s:lexer = {}
-function! s:lexer.advance() abort
-  call self.skip_spaces()
+augroup vimproc
+  autocmd VimLeave * call s:cmd.close()
+augroup END
 
-  let c = self.reader.read()
-  if c < 0
-    return 0
-  endif
 
-  if c =~ '\d'
-    call self.reader.unread()
-    call self.lex_digit()
-    let self.tok = g:vimproc#lexer#token_type.int
+function! s:cmd.open() abort "{{{
+  let cmd = 'cmd.exe'
+  let self.vimproc = vimproc#popen3(cmd)
+  let self.cwd = getcwd()
+
+  " Wait until getting first prompt.
+  let output = ''
+  while output !~ '.\+>$'
+    let output .= self.vimproc.stdout.read()
+  endwhile
+endfunction"}}}
+
+function! s:cmd.close() abort "{{{
+  call self.vimproc.waitpid()
+endfunction"}}}
+
+function! s:cmd.system(cmd) abort "{{{
+  " Execute cmd.
+  if self.cwd !=# getcwd()
+    " Execute cd.
+    let input = '(cd /D "' . getcwd() . '" & ' . a:cmd . ')'
+    let self.cwd = getcwd()
   else
-    throw 'Exception: Not int.'
+    let input = a:cmd
   endif
 
-  return 1
-endfunction
+  call self.vimproc.stdin.write(input . "\n")
 
-function! s:lexer.lex_digit() abort
-  let self.val = 0
+  " Wait until getting prompt.
+  let output = ''
   while 1
-    let c = self.reader.read()
-    if c < 0
-      break
-    elseif c !~ '\d'
-      call self.reader.unread()
-      break
-    endif
-
-    let self.val = self.val * 10 + c
-  endwhile
-endfunction
-
-function! s:lexer.skip_spaces() abort
-  while 1
-    let c = self.reader.read()
-    if c < 0
-      break
-    elseif c !~ '\s'
-      call self.reader.unread()
+    let output .= self.vimproc.stdout.read()
+    let lastnl = strridx(output, "\n")
+    if lastnl >= 0 &&
+          \ output[lastnl + 1:] =~ '^\%([A-Z]:\\\|\\\\.\+\\.\+\\\).*>$'
       break
     endif
   endwhile
+  let result = split(output, '\r\n\|\n')[1:-2]
+
+  return join(result, "\n")
+endfunction"}}}
+
+call s:cmd.open()
+
+function! vimproc#cmd#system(expr) abort
+  let cmd = type(a:expr) == type('') ? a:expr :
+        \ join(map(a:expr,
+        \   'match(v:val, "\\s") >= 0 ? "\"".v:val."\"" : v:val'))
+  return s:cmd.system(cmd)
 endfunction
-
-function! s:lexer.token() abort
-  return self.tok
-endfunction
-
-function! s:lexer.value() abort
-  return self.val
-endfunction
-
-function! vimproc#lexer#init_reader(text) abort
-  let reader = deepcopy(s:reader)
-  let reader.text = split(a:text, '\zs')
-  let reader.pos = 0
-
-  return reader
-endfunction
-
-let s:reader = {}
-
-function! s:reader.read() abort
-  if self.pos >= len(self.text)
-    " Buffer over.
-    return -1
-  endif
-
-  let c = self.text[self.pos]
-  let self.pos += 1
-
-  return c
-endfunction
-
-function! s:reader.unread() abort
-  let self.pos -= 1
-endfunction
-
 
 " Restore 'cpoptions' {{{
 let &cpo = s:save_cpo
