@@ -41,3 +41,5 @@ end
 let g:fuf_keyOpenTabpage = '<CR>'
 let g:fuf_keyOpen = '<C-l>'
 let g:fuf_modesDisable = ['mrufile', 'mrucmd', 'bookmarkfile', 'bookmarkdir', 'tag', 'buffertag', 'taggedfile', 'jumplist', 'changelist', 'quickfix', 'line']
+
+let g:go#use_vimproc = 0

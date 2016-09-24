@@ -130,3 +130,7 @@
 	path = bundles/vim-antlr
 	url = https://github.com/dylon/vim-antlr
 	ignore = dirty
+[submodule "bundles/vim-go"]
+	path = bundles/vim-go
+	url = https://github.com/fatih/vim-go.git
+	ignore = dirty
