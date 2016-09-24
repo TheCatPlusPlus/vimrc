@@ -138,3 +138,7 @@
 	path = bundles/vim-jinja
 	url = https://github.com/lepture/vim-jinja.git
 	ignore = dirty
+[submodule "bundles/vim-repeat"]
+	path = bundles/vim-repeat
+	url = https://github.com/tpope/vim-repeat.git
+	ignore = dirty
