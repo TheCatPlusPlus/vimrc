@@ -142,3 +142,7 @@
 	path = bundles/vim-repeat
 	url = https://github.com/tpope/vim-repeat.git
 	ignore = dirty
+[submodule "bundles/vim-protobuf"]
+	path = bundles/vim-protobuf
+	url = https://github.com/uarun/vim-protobuf.git
+	ignore = dirty
