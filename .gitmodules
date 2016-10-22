@@ -138,3 +138,7 @@
 	path = bundles/vim-protobuf
 	url = https://github.com/uarun/vim-protobuf.git
 	ignore = dirty
+[submodule "bundles/ctrlp"]
+	path = bundles/ctrlp
+	url = https://github.com/ctrlpvim/ctrlp.vim
+	ignore = dirty
