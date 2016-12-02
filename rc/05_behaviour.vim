@@ -14,7 +14,7 @@ end
 
 " command line
 set history=50
-set wildignore=*.swp,*.bak,*.pyc,*.pyo,*.exe,*.pdb,*.obj
+set wildignore=*.swp,*.bak,*.pyc,*.pyo,*.exe,*.pdb,*.obj,*.dll,*.so,*.dylib,*.zip,*.tar,*.7z,*.gz,*.bz2,*.xz
 set wildmenu
 
 " search/replace

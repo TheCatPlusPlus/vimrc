@@ -43,3 +43,12 @@ let g:fuf_keyOpen = '<C-l>'
 let g:fuf_modesDisable = ['mrufile', 'mrucmd', 'bookmarkfile', 'bookmarkdir', 'tag', 'buffertag', 'taggedfile', 'jumplist', 'changelist', 'quickfix', 'line']
 
 let g:go#use_vimproc = 0
+
+let g:ctrlp_user_command = {
+            \ 'types': {
+            \         1: ['.git', 'cd %s && git ls-files -co --exclude-standard']
+            \ },
+            \ 'ignore': 1
+            \ }
+
+let g:racer_experimental_completer = 1
