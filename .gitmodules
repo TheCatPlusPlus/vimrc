@@ -142,3 +142,7 @@
 	path = bundles/ctrlp
 	url = https://github.com/ctrlpvim/ctrlp.vim
 	ignore = dirty
+[submodule "bundles/pgsql.vim"]
+	path = bundles/pgsql.vim
+	url = https://github.com/exu/pgsql.vim
+	ignore = dirty
