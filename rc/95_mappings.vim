@@ -142,3 +142,6 @@ inoremap <C-Space> <C-x><C-o>
 
 " don't move the cursor after exiting insert mode
 inoremap <Esc> <Esc>g`^
+
+map <C-o> <Plug>(ctrlp)
+map <C-p> <Plug>(ctrlp)
