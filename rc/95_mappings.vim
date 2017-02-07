@@ -140,22 +140,5 @@ vnoremap <S-j> <NOP>
 " omnicomplete
 inoremap <C-Space> <C-x><C-o>
 
-" Haskell support:
-" ,ht -- :GhcModType
-" ,hT -- :GhcModTypeClear
-" ,hc -- :GhcModCheck
-" ,hl -- :GhcModLint
-" ,he -- :GhcModExpand
-nnoremap <Leader>ht :GhcModType<CR>
-nnoremap <Leader>hT :GhcModTypeClear<CR>
-nnoremap <Leader>hc :GhcModCheck<CR>
-nnoremap <Leader>hl :GhcModLint<CR>
-nnoremap <Leader>he :GhcModExpand<CR>
-
 " don't move the cursor after exiting insert mode
 inoremap <Esc> <Esc>g`^
-
-" FuzzyFinder
-" Ctrl+O opens a file
-map <C-O> :FufCoverageFile<CR>
-
