@@ -52,3 +52,7 @@ let g:ctrlp_user_command = {
             \ }
 
 let g:racer_experimental_completer = 1
+
+let g:clang_format#detect_style_file = 1
+autocmd FileType c ClangFormatAutoEnable
+autocmd FileType cpp ClangFormatAutoEnable
