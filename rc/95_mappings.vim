@@ -145,3 +145,6 @@ inoremap <Esc> <Esc>g`^
 
 map <C-o> <Plug>(ctrlp)
 map <C-p> <Plug>(ctrlp)
+
+nnoremap <Leader>C :ClangFormat<CR>zz
+vnoremap <Leader>C :'<,'>ClangFormat<CR>zz
