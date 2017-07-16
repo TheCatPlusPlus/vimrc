@@ -154,3 +154,7 @@
 	path = bundles/vim-clang-format
 	url = https://github.com/rhysd/vim-clang-format
 	ignore = dirty
+[submodule "bundles/vim-elixir"]
+	path = bundles/vim-elixir
+	url = https://github.com/elixir-lang/vim-elixir.git
+	ignore = dirty
