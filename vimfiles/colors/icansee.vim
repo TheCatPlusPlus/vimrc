@@ -28,7 +28,7 @@ hi PreProc      guifg=#C53A3A
 hi Question     guifg=Green                     gui=bold
 hi Search       guifg=White      guibg=#C53A3A  gui=bold
 hi Special      guifg=Red
-hi SpecialKey   guifg=#444444
+hi SpecialKey   guifg=#222222
 hi Statement    guifg=Yellow                    gui=NONE
 hi StatusLine   guifg=Black      guibg=Grey     gui=NONE
 hi StatusLineNC guifg=Black      guibg=#555555  gui=NONE
