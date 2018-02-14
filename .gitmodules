@@ -162,3 +162,7 @@
 	path = bundles/vim-syntax-extra
 	url = https://github.com/justinmk/vim-syntax-extra
 	ignore = dirty
+[submodule "bundles/nim.vim"]
+	path = bundles/nim.vim
+	url = https://github.com/zah/nim.vim
+	ignore = dirty
