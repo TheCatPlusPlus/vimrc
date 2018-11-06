@@ -166,3 +166,9 @@
 	path = bundles/nim.vim
 	url = https://github.com/zah/nim.vim
 	ignore = dirty
+[submodule "bundles/vim-terra"]
+	path = bundles/vim-terra
+	url = https://github.com/jakwings/vim-terra
+[submodule "bundles/vim-abolish"]
+	path = bundles/vim-abolish
+	url = https://github.com/tpope/vim-abolish
