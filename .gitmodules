@@ -169,6 +169,12 @@
 [submodule "bundles/vim-terra"]
 	path = bundles/vim-terra
 	url = https://github.com/jakwings/vim-terra
+	ignore = dirty
 [submodule "bundles/vim-abolish"]
 	path = bundles/vim-abolish
 	url = https://github.com/tpope/vim-abolish
+	ignore = dirty
+[submodule "bundles/vim-javascript"]
+	path = bundles/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git
+	ignore = dirty
