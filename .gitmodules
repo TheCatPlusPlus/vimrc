@@ -34,10 +34,6 @@
 	path = bundles/vim-json
 	url = git://github.com/leshill/vim-json
 	ignore = dirty
-[submodule "bundles/vim-powerline"]
-	path = bundles/vim-powerline
-	url = git://github.com/Lokaltog/vim-powerline
-	ignore = dirty
 [submodule "bundles/jinja"]
 	path = bundles/jinja
 	url = git://github.com/vim-scripts/Jinja
@@ -177,4 +173,8 @@
 [submodule "bundles/vim-javascript"]
 	path = bundles/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
+	ignore = dirty
+[submodule "bundles/vim-airline"]
+	path = bundles/vim-airline
+	url = https://github.com/vim-airline/vim-airline
 	ignore = dirty
