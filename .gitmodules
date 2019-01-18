@@ -1,14 +1,6 @@
-[submodule "bundles/gundo"]
-	path = bundles/gundo
-	url = git://github.com/sjl/gundo.vim
-	ignore = dirty
 [submodule "bundles/vim-surround"]
 	path = bundles/vim-surround
 	url = git://github.com/tpope/vim-surround
-	ignore = dirty
-[submodule "bundles/nerdtree"]
-	path = bundles/nerdtree
-	url = git://github.com/scrooloose/nerdtree
 	ignore = dirty
 [submodule "bundles/vim-indent-guides"]
 	path = bundles/vim-indent-guides
@@ -37,10 +29,6 @@
 [submodule "bundles/jinja"]
 	path = bundles/jinja
 	url = git://github.com/vim-scripts/Jinja
-	ignore = dirty
-[submodule "bundles/tagbar"]
-	path = bundles/tagbar
-	url = git://github.com/vim-scripts/Tagbar
 	ignore = dirty
 [submodule "bundles/vim-ps1"]
 	path = bundles/vim-ps1
