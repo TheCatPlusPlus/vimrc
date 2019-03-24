@@ -166,3 +166,7 @@
 	path = bundles/vim-airline
 	url = https://github.com/vim-airline/vim-airline
 	ignore = dirty
+[submodule "bundles/typescript-vim"]
+	path = bundles/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim
+	ignore = dirty
