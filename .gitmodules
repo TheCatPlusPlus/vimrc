@@ -170,3 +170,7 @@
 	path = bundles/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim
 	ignore = dirty
+[submodule "bundles/vaxe"]
+	path = bundles/vaxe
+	url = https://github.com/jdonaldson/vaxe
+	ignore = dirty
