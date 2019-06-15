@@ -24,7 +24,7 @@ set gdefault
 
 " reading files
 set fileformats=unix,dos
-set modeline
+set nomodeline
 
 " indenting
 set tabstop=4
