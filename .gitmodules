@@ -66,10 +66,6 @@
 	path = bundles/vim-freepascal
 	url = https://github.com/boeckmann/vim-freepascal
 	ignore = dirty
-[submodule "bundles/vim-addon-nix"]
-	path = bundles/vim-addon-nix
-	url = https://github.com/MarcWeber/vim-addon-nix
-	ignore = dirty
 [submodule "bundles/vim-addon-mw-utils"]
 	path = bundles/vim-addon-mw-utils
 	url = https://github.com/marcweber/vim-addon-mw-utils
